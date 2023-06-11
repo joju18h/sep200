@@ -40,8 +40,24 @@ Course::Course(std::string code, std::string name){
     list_.tail = nullptr;
 }
 
+Course Course::operator+ (Node* node){
+    if(list_.head == nullptr){
+        list_.head = node;
+        list_.tail = node;
+    }
+    else{
+        list_.tail->next_ = node;
+        list_.tail = node;
+    }
+    return *this;
+}
 
-
-// void Course::display_students(){
-//     while 
-// }
+void Course::display_students(){
+    Node *readhead = list_.head;
+    while(readhead != nullptr){
+        std::cout << "Name: " << readhead->student_.name_ << std::endl;
+        std::cout << "GPA: " << readhead->student_.gpa_ << std::endl;
+        readhead = readhead->next_;
+    }
+    std::cout << std::endl;
+}

@@ -1,8 +1,10 @@
 #ifndef COURSE_H
 #define COURSE_H
 
+#include <iostream>
 #include <string>
 #include "student.h"
+
 
 class Student;
 
@@ -27,7 +29,7 @@ class Course{
         Course(std::string, std::string);
         void display_students();
         friend class Student;
-        Course& operator+(Node);
+        Course operator+(Node*);
 };
 
 #endif //COURSE_H
