@@ -1,22 +1,11 @@
+//CompanyExecutive class implementation file, George Paul Robert, 117928226
 #include "CompanyExecutive.h"
 using namespace std;
 
-/*
-class CompanyExecutive: public ExecutiveEmployee{
-    private:
-        ExecutiveEmployee *executiveEmployeeDB;
 
-    public:
-        static int executiveEmployeeCount;
-        CompanyExecutive();
-        ~CompanyExecutive();
-        bool AddPersonnel(int);
-        bool FindPersonnel(const std::string&, ExecutiveEmployee&);
-        double CalculateSalary(std::string&);
-*/
+int CompanyExecutive::executiveEmployeeCount = 0; // static variable
 
-int CompanyExecutive::executiveEmployeeCount = 0;
-
+// default constructor
 CompanyExecutive::CompanyExecutive(){
     name = " ";
     position = " ";
@@ -28,16 +17,19 @@ CompanyExecutive::CompanyExecutive(){
     executiveEmployeeDB = nullptr;
 }
 
+// destructor
 CompanyExecutive::~CompanyExecutive(){
     delete [] executiveEmployeeDB;
 }
 
+// AddPersonnel function
 bool CompanyExecutive::AddPersonnel(int num){
     bool retval = false;
     if(executiveEmployeeCount + num > MAX_SIZE){
         retval = false;
     }
     else{
+        //temporary array of size executiveEmployeeCount + num
         ExecutiveEmployee* tempDB = new ExecutiveEmployee[num + executiveEmployeeCount];
         for (int i = 0; i < executiveEmployeeCount; i++){
             tempDB[i].name = executiveEmployeeDB[i].name;
@@ -47,7 +39,7 @@ bool CompanyExecutive::AddPersonnel(int num){
             tempDB[i].perquisites = executiveEmployeeDB[i].perquisites;
         }
         int totalNum = executiveEmployeeCount + num;
-
+        //add new employees to the temporary array
         for (int i = executiveEmployeeCount; i < totalNum; i++){
             cout << "Enter the employee's name: ";
             getline(cin, tempDB[i].name);
@@ -70,6 +62,7 @@ bool CompanyExecutive::AddPersonnel(int num){
             executiveEmployeeCount++;
 
         }
+        //delete the old array and set it to the new array
         delete [] executiveEmployeeDB;
         executiveEmployeeDB = tempDB;
         tempDB = nullptr;
@@ -78,7 +71,7 @@ bool CompanyExecutive::AddPersonnel(int num){
     }
     return retval;
 }
-
+// FindPersonnel function
 bool CompanyExecutive::FindPersonnel(const string& name, ExecutiveEmployee& empl){
     bool retval = false;
     for (int i = 0; i < executiveEmployeeCount; i++){
@@ -94,6 +87,7 @@ bool CompanyExecutive::FindPersonnel(const string& name, ExecutiveEmployee& empl
     return retval;
 }
 
+// CalculateSalary function
 double CompanyExecutive::CalculateSalary(const string& name){
     double salary = 0.0;
     for (int i = 0; i < executiveEmployeeCount; i++){

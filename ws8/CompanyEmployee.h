@@ -1,3 +1,4 @@
+//CompanyEmployee class header file, George Paul Robert, 117928226
 #ifndef COMPANYEMPLOYEE_H
 #define COMPANYEMPLOYEE_H
 

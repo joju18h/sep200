@@ -44,5 +44,4 @@ template <typename T>
 	}
 
 
-
 #endif // _COMPANYBASE_H_

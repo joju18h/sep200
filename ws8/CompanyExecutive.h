@@ -1,3 +1,4 @@
+//CompanyExecutive.h class definition, George Paul Robert, 117928226
 #ifndef COMPANYEXECUTIVE_H
 #define COMPANYEXECUTIVE_H
 

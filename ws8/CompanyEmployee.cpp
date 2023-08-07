@@ -1,22 +1,11 @@
+//CompanyEmployee class implementation file, George Paul Robert, 117928226
 #include "CompanyEmployee.h"
 using namespace std;
-/*
-class CompanyEmployee{
-    private:
-        StandardEmployee *standardEmployeeDB;
 
-    public:
-        static int standardEmployeeCount;
-        CompanyEmployee();
-        ~CompanyEmployee();
-        bool AddPersonnel(int num);
-        bool FindPersonnel(std::string name, StandardEmployee& empl);
-        double CalculateSalary(std::string name);
-};
-*/
 
-int CompanyEmployee::standardEmployeeCount = 0;
+int CompanyEmployee::standardEmployeeCount = 0; // static variable
 
+// default constructor
 CompanyEmployee::CompanyEmployee(){
     name = " ";
     position = " ";
@@ -28,6 +17,7 @@ CompanyEmployee::CompanyEmployee(){
     standardEmployeeDB = nullptr;
 }
 
+// destructor
 CompanyEmployee::~CompanyEmployee(){
     delete [] standardEmployeeDB;
 }
