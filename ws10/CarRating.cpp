@@ -3,6 +3,9 @@
 //and https://www.cplusplus.com/reference/numeric/
 //Documentation for STL containters can be found at: http://www.cplusplus.com/reference/stl/
 
+
+//George Paul Robert, 117928226
+
 #include <algorithm>
 #include <iostream>
 #include <forward_list>
