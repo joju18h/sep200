@@ -13,8 +13,8 @@ int main() {
 	CompanyExecutive executiveEmployeeDB;
 
 	cout << "Add three persons to each of your databases." << endl;
-	AddPersonnel(standardEmployeeDB, 3);
-	AddPersonnel(executiveEmployeeDB, 3);
+	AddPersonnel(standardEmployeeDB, 1);
+	AddPersonnel(executiveEmployeeDB, 1);
 
 	string name;
 	cout << "Enter a name to search for in both databases: ";

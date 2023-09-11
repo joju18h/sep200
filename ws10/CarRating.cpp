@@ -19,7 +19,7 @@ struct CarRating {
 	double reliability;
 	double fuelEfficiency;
 	double horsePower;
-};
+};   
 
 void processCars(vector<CarRating>& car) {
 	//Task 1 - Sort and print out all cars in order of their reliability rating (higher is better).
